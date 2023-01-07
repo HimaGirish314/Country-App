@@ -1,11 +1,12 @@
 .navbar{
     background-color: rgb(101, 101, 184);
-    padding: 15px;
+    padding: 8px 15px;
     text-align: center;
 }
-.navbar h1{
+.navbar .name{
     color: white;
     letter-spacing: 1.5px;
     font-weight: 900;
     font-size: 2rem;
+    text-decoration: none;
 }
