@@ -2,10 +2,13 @@ import React ,{useState,useEffect}from 'react';
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
 import './main.css';
+import Modal from '../Modal/Modal';
 const url="https://restcountries.com/v2/all";
 
 const Main = () => {
     const [countryData,setCountryData]=useState([])
+    const [modal,setModal]=useState(false)
+    const [modalData,setModalData]=useState([])
     
     //Pagination
     const [pageNumber,setPageNumber]=useState(0)
@@ -26,6 +29,11 @@ const Main = () => {
     const changePage=({selected})=>{
             setPageNumber(selected)
     }
+    const handleModal=(data)=>{
+        setModalData(data)
+        setModal(true)
+        
+    }
   return (
     <section className='container'>
         <div className="card-container">
@@ -38,10 +46,11 @@ const Main = () => {
             previousLinkClassName={"previousBttn"}
             nextLinkClassName={"nextBttn"}
             />
+            {modal&& <Modal modalData={modalData} setModal={setModal}/>}
             {
                 displayUsers.map((data,id)=>{
                     return (
-                        <div className='all-cards'>
+                        <div className='all-cards' onClick={()=>{handleModal(data)}}>
                          <div>
                             <img src={data.flag} alt="country-flag" />
                         </div>
@@ -54,7 +63,6 @@ const Main = () => {
                     )
                 })
             }
-           
         </div>
     </section>
   )
