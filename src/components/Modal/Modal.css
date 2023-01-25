@@ -3,9 +3,9 @@
     justify-content: space-between;
     align-items: center;
     width: 40%;
-    height: 400px;
+    height: 320px;
     border-radius: 15px;
-    background-color: white;
+    background-color: rgb(254, 214, 214);
     padding: 20px;
     position: fixed;
     top: 50%;
@@ -32,4 +32,5 @@
     background-color: darkgray;
     margin-left: 50px;
     margin-top: 15px;
+    cursor: pointer;
 }
