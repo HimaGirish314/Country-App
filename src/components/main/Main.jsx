@@ -48,7 +48,7 @@ const Main = () => {
             />
             {modal&& <Modal modalData={modalData} setModal={setModal}/>}
             {
-                displayUsers.map((data,id)=>{
+                displayUsers.map((data)=>{
                     return (
                         <div className='all-cards' onClick={()=>{handleModal(data)}}>
                          <div>
